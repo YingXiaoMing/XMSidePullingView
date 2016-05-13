@@ -16,6 +16,11 @@
 		FC5375D21CE5838D00F7D742 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC5375D01CE5838D00F7D742 /* LaunchScreen.storyboard */; };
 		FC5375DD1CE5838D00F7D742 /* _QQ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5375DC1CE5838D00F7D742 /* _QQ____Tests.m */; };
 		FC5375E81CE5838D00F7D742 /* _QQ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5375E71CE5838D00F7D742 /* _QQ____UITests.m */; };
+		FC5375FC1CE5B12D00F7D742 /* channel.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC5375FB1CE5B12D00F7D742 /* channel.plist */; };
+		FC5375FF1CE5B23400F7D742 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5375FE1CE5B23400F7D742 /* Channel.m */; };
+		FC5376021CE5BA3F00F7D742 /* LeftHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5376011CE5BA3F00F7D742 /* LeftHeadView.m */; };
+		FC5376041CE5BDE700F7D742 /* triangle_right_114px_1189854_easyicon.net.png in Resources */ = {isa = PBXBuildFile; fileRef = FC5376031CE5BDE700F7D742 /* triangle_right_114px_1189854_easyicon.net.png */; };
+		FC5376071CE5D31B00F7D742 /* VideoData.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5376061CE5D31B00F7D742 /* VideoData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,14 @@
 		FC5375E31CE5838D00F7D742 /* 仿QQ好友列表UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "仿QQ好友列表UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC5375E71CE5838D00F7D742 /* _QQ____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_QQ____UITests.m"; sourceTree = "<group>"; };
 		FC5375E91CE5838D00F7D742 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC5375FB1CE5B12D00F7D742 /* channel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = channel.plist; sourceTree = "<group>"; };
+		FC5375FD1CE5B23400F7D742 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Channel.h; sourceTree = "<group>"; };
+		FC5375FE1CE5B23400F7D742 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Channel.m; sourceTree = "<group>"; };
+		FC5376001CE5BA3F00F7D742 /* LeftHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftHeadView.h; sourceTree = "<group>"; };
+		FC5376011CE5BA3F00F7D742 /* LeftHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftHeadView.m; sourceTree = "<group>"; };
+		FC5376031CE5BDE700F7D742 /* triangle_right_114px_1189854_easyicon.net.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle_right_114px_1189854_easyicon.net.png; sourceTree = "<group>"; };
+		FC5376051CE5D31B00F7D742 /* VideoData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoData.h; sourceTree = "<group>"; };
+		FC5376061CE5D31B00F7D742 /* VideoData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +126,8 @@
 				FC5375D31CE5838D00F7D742 /* Info.plist */,
 				FC5375CB1CE5838D00F7D742 /* _QQ____.xcdatamodeld */,
 				FC5375BF1CE5838D00F7D742 /* Supporting Files */,
+				FC5376001CE5BA3F00F7D742 /* LeftHeadView.h */,
+				FC5376011CE5BA3F00F7D742 /* LeftHeadView.m */,
 			);
 			path = "仿QQ好友列表";
 			sourceTree = "<group>";
@@ -120,7 +135,13 @@
 		FC5375BF1CE5838D00F7D742 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FC5376031CE5BDE700F7D742 /* triangle_right_114px_1189854_easyicon.net.png */,
 				FC5375C01CE5838D00F7D742 /* main.m */,
+				FC5375FB1CE5B12D00F7D742 /* channel.plist */,
+				FC5375FD1CE5B23400F7D742 /* Channel.h */,
+				FC5375FE1CE5B23400F7D742 /* Channel.m */,
+				FC5376051CE5D31B00F7D742 /* VideoData.h */,
+				FC5376061CE5D31B00F7D742 /* VideoData.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -246,6 +267,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC5375FC1CE5B12D00F7D742 /* channel.plist in Resources */,
+				FC5376041CE5BDE700F7D742 /* triangle_right_114px_1189854_easyicon.net.png in Resources */,
 				FC5375D21CE5838D00F7D742 /* LaunchScreen.storyboard in Resources */,
 				FC5375CF1CE5838D00F7D742 /* Assets.xcassets in Resources */,
 				FC5375CA1CE5838D00F7D742 /* Main.storyboard in Resources */,
@@ -274,8 +297,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC5375C71CE5838D00F7D742 /* ViewController.m in Sources */,
+				FC5376021CE5BA3F00F7D742 /* LeftHeadView.m in Sources */,
 				FC5375CD1CE5838D00F7D742 /* _QQ____.xcdatamodeld in Sources */,
+				FC5376071CE5D31B00F7D742 /* VideoData.m in Sources */,
 				FC5375C41CE5838D00F7D742 /* AppDelegate.m in Sources */,
+				FC5375FF1CE5B23400F7D742 /* Channel.m in Sources */,
 				FC5375C11CE5838D00F7D742 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
