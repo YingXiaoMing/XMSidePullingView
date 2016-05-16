@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "Channel.h"
+
 #import "VideoData.h"
 @protocol LeftHeadViewDelegate<NSObject>
 -(void)LeftHeadViewClick:(Channel *)channel;
 @end
 @interface LeftHeadView : UITableViewHeaderFooterView
 @property(nonatomic,strong)Channel *channel;
-@property(nonatomic,copy)NSString *headName;
+@property(nonatomic,strong)VideoData *videoData;
+@property(nonatomic,strong)NSMutableArray *tmpData;
 @property(nonatomic,weak)id<LeftHeadViewDelegate> delegate;
-
 +(instancetype)headViewWithTableView:(UITableView *)tableView;
-
 @end

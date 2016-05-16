@@ -10,6 +10,8 @@
 #define setBgColor(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
 @interface LeftHeadView()
 @property(nonatomic,weak)UIButton *btn;
+@property(nonatomic,weak)UIView *line1;
+@property(nonatomic,weak)UIView *line2;
 
 @end
 
@@ -38,16 +40,29 @@
         [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn];
         self.btn = btn;
+        UIView *line1 = [[UIView alloc]init];
+        line1.backgroundColor = [UIColor clearColor];
+        [self addSubview:line1];
+        UIView *line2 = [[UIView alloc]init];
+        line2.backgroundColor = [UIColor clearColor];
+        [self addSubview:line2];
+        self.line1 = line1;
+        self.line2 = line2;
     }
     return self;
 }
 -(void)btnClick:(UIButton *)sender
 {
-    for (int i=0; i<self.channel.device.count; i++) {
-        if (self.channel.device[i] == self.headName) continue;
-        
+    for (int i=0; i<3; i++) {
+        if (self.videoData == self.tmpData[i]){
+            continue;
+        }
+        VideoData *model = self.tmpData[i];
+        model.open = NO;
     }
-    self.channel.open = !self.channel.isOpen;
+    self.videoData.open = !self.videoData.isOpen;
+    NSLog(@"%d",self.videoData.isOpen);
+    
     if ([self.delegate respondsToSelector:@selector(LeftHeadViewClick:)]) {
         [self.delegate LeftHeadViewClick:self.channel];
     }
@@ -55,18 +70,15 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-    self.btn.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
+    self.btn.frame = CGRectMake(0, 1, self.bounds.size.width, self.bounds.size.height - 2);
+    self.line1.frame = CGRectMake(0, 0, self.bounds.size.width, 1);
+    self.line2.frame = CGRectMake(0, self.bounds.size.height - 1, self.bounds.size.width, 1);
 }
--(void)setHeadName:(NSString *)headName
+-(void)setVideoData:(VideoData *)videoData
 {
-    _headName = headName;
-    [self.btn setTitle:headName forState:UIControlStateNormal];
-}
--(void)setChannel:(Channel *)channel
-{
-    _channel = channel;
-    NSLog(@"%d",_channel.isOpen);
-    if (_channel.isOpen) {//要打开
+    _videoData = videoData;
+    [self.btn setTitle:videoData.device_name forState:UIControlStateNormal];
+    if (videoData.isOpen) {
         self.btn.imageView.transform = CGAffineTransformMakeRotation(M_PI_2);
     }else{
         self.btn.imageView.transform = CGAffineTransformMakeRotation(0);

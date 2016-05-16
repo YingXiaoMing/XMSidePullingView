@@ -99,7 +99,12 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0.1;    
+    VideoData *videoData = self.tmpArray[section];
+    if (videoData.isOpen) {
+        return videoData.channel_info.count;
+    }else{
+        return 0.1;
+    }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -108,8 +113,10 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
-    cell.textLabel.text = self.channel.channel[indexPath.row];
-    cell.textLabel.backgroundColor = setBgColor(205, 14, 21);
+    VideoData *videoData = self.tmpArray[indexPath.section];
+    Channel *model = [Channel cellModeWithDict:(NSDictionary *)videoData.channel_info[indexPath.row]];
+    cell.textLabel.text = model.channel_name;
+    cell.textLabel.textColor = setBgColor(205, 14, 21);
     cell.backgroundColor = setBgColor(232, 232, 232);
     cell.clipsToBounds = YES;
     return cell;
@@ -118,9 +125,9 @@
 {
     LeftHeadView *leftHeadView = [LeftHeadView headViewWithTableView:tableView];
     leftHeadView.delegate = self;
-    leftHeadView.headName = self.channel.device[section];
-    leftHeadView.channel = self.channel;
-    
+    VideoData *videoData = self.tmpArray[section];
+    leftHeadView.videoData = videoData;
+    leftHeadView.tmpData = self.tmpArray;
     return leftHeadView;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

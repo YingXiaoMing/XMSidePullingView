@@ -9,5 +9,10 @@
 #import "Channel.h"
 
 @implementation Channel
-
++(instancetype)cellModeWithDict:(NSDictionary *)dict
+{
+    Channel *channel = [[Channel alloc]init];
+    [channel setValuesForKeysWithDictionary:dict];
+    return channel;
+}
 @end

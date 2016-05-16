@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface Channel : NSObject
-@property(nonatomic,copy)NSString *channel_name;
+@property(nonatomic,strong)NSString *channel_num;
+@property(nonatomic,strong)NSString *channel_name;
+@property(nonatomic,strong)NSString *device_num;
++(instancetype)cellModeWithDict:(NSDictionary *)dict;
 
 @end
